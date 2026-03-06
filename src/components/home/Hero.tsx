@@ -48,7 +48,7 @@ export default function Hero() {
                     variants={titleContainer}
                     initial="hidden"
                     animate="visible"
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-foreground dark:text-white leading-[1.2] mb-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
+                    className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-foreground dark:text-white leading-[1.2] mb-12 flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
                 >
                     <motion.span variants={wordItem}>
                         COD<span className="text-codo-green">O</span>
@@ -60,10 +60,6 @@ export default function Hero() {
                         Innovations
                     </motion.span>
                 </motion.h1>
-
-                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg md:text-lg text-foreground/80 max-w-2xl mb-10 leading-relaxed">
-                    The central powerhouse driving digital transformation. We engineer elite, custom software solutions through our Agency and empower the next generation of tech leaders through our Academy.
-                </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
                     {/* Primary Glass Button */}

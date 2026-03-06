@@ -89,7 +89,8 @@ export default function QuantumScene() {
                     </Float>
 
                     <Float speed={1.8} rotationIntensity={0.4} floatIntensity={0.8}>
-                        <Sphere args={[1, 64, 64]} position={[4, -1.5, -4]} scale={0.8}>
+                        {/* Positioned near the "Work With Our Agency" CTA on the bottom left */}
+                        <Sphere args={[1, 64, 64]} position={[-3.5, -2, -1]} scale={0.8}>
                             <MeshDistortMaterial
                                 color={primaryColor}
                                 envMapIntensity={1}
@@ -104,8 +105,8 @@ export default function QuantumScene() {
                     </Float>
 
                     <Float speed={2.5} rotationIntensity={0.6} floatIntensity={1.2}>
-                        {/* Positioned near the "Work With Our Agency" CTA on the bottom left */}
-                        <Sphere args={[1, 64, 64]} position={[-3.5, -2, -1]} scale={0.6}>
+                        {/* Positioned near the bottom right under "Innovations" */}
+                        <Sphere args={[1, 64, 64]} position={[5, -2, -2]} scale={0.6}>
                             <MeshDistortMaterial
                                 color={isDark ? "#000000" : "#1e293b"}
                                 envMapIntensity={1}

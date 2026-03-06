@@ -1,9 +1,31 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowRight, Code2, GraduationCap } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Ecosystem() {
+    const ref = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: ref,
+        offset: ["start end", "center center"]
+    });
+
+    const yParallax = useTransform(scrollYProgress, [0, 1], [100, 0]);
+    const opacityParallax = useTransform(scrollYProgress, [0.3, 0.8], [0, 1]);
+
     return (
-        <section className="container max-w-7xl mx-auto px-4 md:px-8 pb-16">
+        <section ref={ref} className="container max-w-7xl mx-auto px-4 md:px-8 pb-16 pt-12">
+            {/* New Parallax Narrative Intro */}
+            <motion.div
+                style={{ y: yParallax, opacity: opacityParallax }}
+                className="max-w-4xl mx-auto text-center mb-24"
+            >
+                <p className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed text-foreground/90 dark:text-white/90 balance-text">
+                    The central powerhouse driving digital transformation. We engineer elite, custom software solutions through our Agency and empower the next generation of tech leaders through our Academy.
+                </p>
+            </motion.div>
             <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-codo-blue dark:text-codo-aqua">Our Ecosystem</h2>
                 <p className="text-foreground/70 mt-3">Two specialized verticals, one shared vision of digital excellence.</p>
