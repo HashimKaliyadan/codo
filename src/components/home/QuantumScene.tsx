@@ -104,8 +104,8 @@ export default function QuantumScene() {
                     </Float>
 
                     <Float speed={2.5} rotationIntensity={0.6} floatIntensity={1.2}>
-                        {/* Moved this black/dark sphere up (y = 0) to sit above the buttons */}
-                        <Sphere args={[1, 64, 64]} position={[-2.5, 0, -1.5]} scale={0.5}>
+                        {/* Positioned near the "Work With Our Agency" CTA on the bottom left */}
+                        <Sphere args={[1, 64, 64]} position={[-3.5, -2, -1]} scale={0.6}>
                             <MeshDistortMaterial
                                 color={isDark ? "#000000" : "#1e293b"}
                                 envMapIntensity={1}
