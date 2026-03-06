@@ -66,10 +66,12 @@ export default function Hero() {
                 </motion.p>
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-                    <Link href="/portfolio" className="inline-flex h-14 items-center justify-center rounded-codo bg-codo-blue px-8 font-medium text-white shadow-codo transition-transform hover:-translate-y-1 w-full sm:w-auto dark:bg-codo-aqua dark:text-codo-blue">
+                    {/* Primary Glass Button */}
+                    <Link href="/portfolio" className="inline-flex h-14 items-center justify-center rounded-2xl bg-codo-blue/60 px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-blue/70 hover:-translate-y-1 hover:shadow-2xl w-full sm:w-auto dark:bg-codo-aqua/70 dark:text-codo-blue dark:border-white/30 dark:hover:bg-codo-aqua/80">
                         <Code2 className="mr-2 h-5 w-5" /> Work With Our Agency
                     </Link>
-                    <Link href="https://codoacademy.com" target="_blank" className="inline-flex h-14 items-center justify-center rounded-codo border border-codo-blue/30 bg-background/50 backdrop-blur-md px-8 font-medium text-codo-blue transition-transform hover:-translate-y-1 w-full sm:w-auto dark:border-codo-aqua/30 dark:text-codo-aqua">
+                    {/* Secondary Glass Button */}
+                    <Link href="https://codoacademy.com" target="_blank" className="inline-flex h-14 items-center justify-center rounded-2xl bg-white/30 backdrop-blur-xl border border-white/40 px-8 font-medium text-codo-blue shadow-lg transition-all hover:bg-white/40 hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto dark:bg-black/30 dark:border-white/20 dark:text-codo-aqua dark:hover:bg-black/40">
                         <GraduationCap className="mr-2 h-5 w-5" /> Explore CODO Academy
                     </Link>
                 </motion.div>
