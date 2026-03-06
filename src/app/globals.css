@@ -4,15 +4,23 @@
 
 @layer base {
   :root {
-    --background: 240 100% 98%;
-    --foreground: 222 47% 11%;
-    --border: 220 13% 91%;
+    --background: 228 100% 98%;
+    /* CODO Aqua Tint */
+    --foreground: 209 100% 12%;
+    /* CODO Blue Text */
+    --border: 209 20% 90%;
+    --primary: 164 100% 26%;
+    /* CODO Green */
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 0 0% 98%;
-    --border: 220 13% 21%;
+    --background: 209 100% 8%;
+    /* CODO Deep Blue Background */
+    --foreground: 228 100% 98%;
+    /* CODO Aqua Text */
+    --border: 209 100% 15%;
+    --primary: 164 100% 26%;
+    /* CODO Green */
   }
 }
 
@@ -39,5 +47,5 @@
 
 /* Utility class for the SOP standard backdrop blur */
 .codo-glass {
-  @apply bg-white/70 dark:bg-[#00203F]/70 backdrop-blur-md border border-white/20 dark:border-white/10;
+  @apply bg-white/40 dark:bg-[#00203F]/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
 }

@@ -9,8 +9,10 @@ export default function Hero() {
     return (
         <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden pt-[88px]">
             {/* 3D Quantum Scene Background */}
-            <div className="absolute inset-0 w-full h-full pointer-events-none -z-10">
+            <div className="absolute inset-0 w-full h-full pointer-events-none -z-20">
                 <QuantumScene />
+                {/* Ambient Readability Overlay */}
+                <div className="absolute inset-0 bg-radial-[circle_at_center,_var(--background)_0%,_transparent_70%] opacity-40 dark:opacity-60" />
             </div>
 
             <div className="container max-w-5xl mx-auto px-6 text-center z-10 flex flex-col items-center">
