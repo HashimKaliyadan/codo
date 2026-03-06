@@ -43,7 +43,7 @@ export default function SalesAdvisorModal({ isOpen, onClose }: SalesAdvisorModal
                     <CodoButton variant="ghost" onClick={onClose}>
                         Cancel
                     </CodoButton>
-                    <CodoButton variant="default" onClick={handleRequestCall} className="gap-2">
+                    <CodoButton variant="default" onClick={handleRequestCall} className="gap-2" isLoading={isSubmitting}>
                         <PhoneCall size={16} />
                         Request Callback
                     </CodoButton>

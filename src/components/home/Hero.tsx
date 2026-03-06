@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Code2, GraduationCap } from "lucide-react";
+import { Code2, GraduationCap } from "lucide-react";
 import { motion, useScroll, useTransform, Variants } from "framer-motion";
 import QuantumScene from "./QuantumScene";
 
