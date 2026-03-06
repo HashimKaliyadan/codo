@@ -38,22 +38,23 @@ export default function Navbar() {
                                 shadow-codo 
                                 rounded-3xl overflow-hidden">
 
-                    <div className="h-[72px] grid grid-cols-12 items-center px-6 lg:px-8">
+                    {/* Flexbox container for mathematically perfect horizontal distribution */}
+                    <div className="h-[72px] flex justify-between items-center px-4 sm:px-6 lg:px-8">
                         {/* Logo */}
-                        <div className="col-span-4 md:col-span-3">
+                        <div className="flex-shrink-0">
                             <Link href="/" className="flex items-center gap-2 group/logo w-fit">
                                 <img
                                     src={mounted && theme === "dark"
                                         ? "https://www.codoacademy.com/assets/@logo3-Btghxk3u.png"
                                         : "https://www.codoacademy.com/assets/@logoq-B0Racrff.png"}
                                     alt="CODO logo"
-                                    className="h-8 md:h-10 transition-transform group-hover/logo:scale-105 duration-300 pointer-events-none"
+                                    className="h-8 sm:h-9 md:h-10 transition-transform group-hover/logo:scale-105 duration-300 pointer-events-none"
                                 />
                             </Link>
                         </div>
 
-                        {/* Desktop Navigation – with Liquid Glass Pill */}
-                        <div className="hidden md:flex col-span-6 items-center justify-center gap-x-2">
+                        {/* Desktop Navigation – Hidden until 'lg' to prevent squishing */}
+                        <div className="hidden lg:flex items-center justify-center gap-x-2">
                             {navLinks.map((link) => {
                                 const isActive = pathname === link.href;
                                 return (
@@ -82,14 +83,14 @@ export default function Navbar() {
                         </div>
 
                         {/* Actions */}
-                        <div className="col-span-8 md:col-span-3 flex items-center justify-end gap-3">
+                        <div className="flex items-center justify-end gap-3 sm:gap-4 flex-shrink-0">
                             <div className="hidden sm:block">
                                 <ThemeToggle />
                             </div>
 
                             <button
                                 onClick={() => setIsAdvisorModalOpen(true)}
-                                className="flex h-11 w-11 items-center justify-center rounded-full 
+                                className="flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full 
                                            bg-codo-green text-white shadow-md 
                                            transition-all hover:brightness-110 active:scale-[0.92] group/phone"
                                 aria-label="Talk to advisor"
@@ -97,13 +98,13 @@ export default function Navbar() {
                                 <Phone size={20} className="group-hover/phone:rotate-12 transition-transform" />
                             </button>
 
-                            {/* Mobile Menu Button */}
+                            {/* Mobile Menu Button - shows when nav is hidden (< lg) */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="md:hidden p-2.5 rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors"
+                                className="lg:hidden flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors"
                                 aria-label="Toggle menu"
                             >
-                                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                             </button>
                         </div>
                     </div>
@@ -118,7 +119,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -20, scale: 0.95 }}
                         transition={{ duration: 0.3, ease: "circOut" }}
-                        className="absolute top-[108px] left-6 right-6 z-40 md:hidden"
+                        className="absolute top-[108px] left-4 right-4 sm:left-6 sm:right-6 lg:hidden z-40"
                     >
                         <div className="rounded-3xl bg-white/90 dark:bg-codo-blue/90 backdrop-blur-xl 
                                         border border-border p-4 shadow-2xl">

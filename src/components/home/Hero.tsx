@@ -32,7 +32,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden pt-[88px]">
+        <section className="relative w-full min-h-[100svh] flex flex-col items-center justify-center overflow-hidden pt-[88px] pb-12 sm:pb-0">
             {/* 3D Quantum Scene Background with Parallax Scroll */}
             <motion.div
                 className="absolute inset-0 w-full h-full pointer-events-none z-0"
@@ -43,12 +43,12 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-radial-[circle_at_center,_var(--background)_0%,_transparent_70%] opacity-40 dark:opacity-60 z-10" />
             </motion.div>
 
-            <div className="relative container max-w-5xl mx-auto px-6 text-center z-20 flex flex-col items-center">
+            <div className="relative container max-w-5xl mx-auto px-6 text-center z-20 flex flex-col items-center mt-12 sm:mt-0">
                 <motion.h1
                     variants={titleContainer}
                     initial="hidden"
                     animate="visible"
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold tracking-tight text-foreground dark:text-white leading-[1.2] mb-12 flex flex-wrap items-center justify-center gap-x-4 gap-y-2"
+                    className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-foreground dark:text-white leading-[1.1] mb-10 sm:mb-12 flex flex-col md:flex-row items-center justify-center gap-x-4 gap-y-2 sm:gap-y-4"
                 >
                     <motion.span variants={wordItem}>
                         COD<span className="text-codo-green">O</span>
