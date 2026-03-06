@@ -3,7 +3,6 @@
 import React, { useState, useEffect, Suspense, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Float, MeshDistortMaterial, Sphere, Environment } from '@react-three/drei';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { useTheme } from 'next-themes';
 import * as THREE from 'three';
 
@@ -120,11 +119,6 @@ export default function QuantumScene() {
                         </Sphere>
                     </Float>
                 </SceneRig>
-
-                {/* Post-Processing Effects */}
-                <EffectComposer>
-                    <Bloom mipmapBlur luminanceThreshold={0.5} luminanceSmoothing={0.9} intensity={isDark ? 0.8 : 0.4} />
-                </EffectComposer>
             </Suspense>
         </Canvas>
     );
