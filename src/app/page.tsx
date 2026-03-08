@@ -8,7 +8,7 @@ import CtaSection from "@/components/home/CtaSection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-50 dark:bg-[#00152b] text-foreground overflow-hidden">
+    <main className="min-h-screen bg-background text-foreground overflow-hidden">
       <Hero />
       <Ecosystem />
       <Services />

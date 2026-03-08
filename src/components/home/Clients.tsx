@@ -13,7 +13,7 @@ const clients = [
 
 export default function Clients() {
     return (
-        <section className="py-20 bg-zinc-50 dark:bg-[#000d1a] border-y border-border/50 overflow-hidden">
+        <section className="py-20 border-y border-border/50 overflow-hidden">
             <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-10">
                     <p className="text-sm font-semibold text-foreground/60 tracking-widest uppercase">
