@@ -49,3 +49,25 @@
 .codo-glass {
   @apply bg-white/40 dark:bg-[#00203F]/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
 }
+
+/* Animated gradient mesh background for Ecosystem narrative */
+@keyframes meshFloat {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.15) rotate(15deg);
+  }
+}
+
+/* Light sweep effect for premium cards */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
