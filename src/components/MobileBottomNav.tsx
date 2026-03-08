@@ -3,18 +3,21 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Image, MessageCircle, Menu, X } from "lucide-react";
+import {
+    Home, Image, MessageCircle, Menu, X,
+    Info, Layers, BookOpen, Briefcase, Mail
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 
 const fullNavLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contact" },
+    { name: "Home", href: "/", icon: Home },
+    { name: "About", href: "/about", icon: Info },
+    { name: "Services", href: "/services", icon: Layers },
+    { name: "Portfolio", href: "/portfolio", icon: Image },
+    { name: "Blog", href: "/blog", icon: BookOpen },
+    { name: "Careers", href: "/careers", icon: Briefcase },
+    { name: "Contact", href: "/contact", icon: Mail },
 ];
 
 export default function MobileBottomNav() {
@@ -43,47 +46,53 @@ export default function MobileBottomNav() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsMenuOpen(false)}
-                            className="fixed inset-0 bg-background/40 backdrop-blur-sm z-40 md:hidden"
+                            className="fixed inset-0 bg-background/60 backdrop-blur-md z-40 md:hidden"
                         />
 
-                        {/* Drawer Menu */}
+                        {/* Drawer Menu — pinned between top nav (top-[104px]) and bottom nav (bottom-[88px]) */}
                         <motion.div
-                            initial={{ opacity: 0, y: 100, scale: 0.95 }}
+                            initial={{ opacity: 0, y: 60, scale: 0.97 }}
                             animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: 100, scale: 0.95 }}
-                            transition={{ duration: 0.3, ease: "circOut" }}
-                            className="fixed bottom-24 left-4 right-4 z-40 md:hidden pb-4"
+                            exit={{ opacity: 0, y: 60, scale: 0.97 }}
+                            transition={{ duration: 0.25, ease: "circOut" }}
+                            className="fixed top-[104px] bottom-[88px] left-4 right-4 z-40 md:hidden flex flex-col"
                         >
-                            <div className="rounded-3xl bg-white/90 dark:bg-codo-blue/95 backdrop-blur-2xl border border-border/50 p-4 shadow-2xl overflow-hidden">
-                                <div className="flex justify-between items-center mb-4 px-2 pb-2 border-b border-border/50">
-                                    <span className="text-sm font-bold opacity-80 uppercase tracking-widest">Menu</span>
+                            <div className="rounded-3xl bg-white/95 dark:bg-[#001a30]/95 backdrop-blur-2xl border border-border/40 shadow-2xl overflow-hidden flex flex-col h-full">
+                                {/* Header */}
+                                <div className="flex justify-between items-center px-5 py-3 border-b border-border/30 shrink-0">
+                                    <span className="text-xs font-bold opacity-60 uppercase tracking-[0.2em]">Navigation</span>
                                     <button
                                         onClick={() => setIsMenuOpen(false)}
-                                        className="h-8 w-8 rounded-full bg-foreground/5 flex items-center justify-center -mr-1"
+                                        className="h-8 w-8 rounded-full bg-foreground/5 flex items-center justify-center active:scale-90 transition-transform"
                                     >
-                                        <X size={18} />
+                                        <X size={16} />
                                     </button>
                                 </div>
 
-                                <div className="flex flex-col gap-1 overflow-y-auto hide-scrollbar" style={{ maxHeight: 'calc(100svh - 220px)' }}>
+                                {/* Nav Links */}
+                                <div className="flex-1 overflow-y-auto hide-scrollbar px-3 py-2">
                                     {fullNavLinks.map((link) => {
                                         const isActive = pathname === link.href;
+                                        const Icon = link.icon;
                                         return (
                                             <Link
                                                 key={link.href}
                                                 href={link.href}
-                                                className={`px-4 py-3 rounded-2xl text-[16px] font-semibold transition-all flex items-center
-                                                    ${isActive
-                                                        ? "bg-codo-green/10 text-codo-green"
-                                                        : "text-foreground/80 active:bg-foreground/5"}`}
+                                                className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-[15px] font-semibold transition-all active:scale-[0.98] ${isActive
+                                                        ? "bg-codo-green text-white shadow-md shadow-codo-green/20"
+                                                        : "text-foreground/70 active:bg-foreground/5"
+                                                    }`}
                                             >
+                                                <Icon size={18} className={isActive ? "opacity-90" : "opacity-40"} />
                                                 {link.name}
                                             </Link>
                                         );
                                     })}
                                 </div>
-                                <div className="mt-2 pt-4 border-t border-border flex items-center justify-between px-4">
-                                    <span className="text-sm font-medium opacity-60">Theme</span>
+
+                                {/* Theme Toggle Footer */}
+                                <div className="px-5 py-3 border-t border-border/30 flex items-center justify-between shrink-0">
+                                    <span className="text-xs font-medium opacity-50">Appearance</span>
                                     <ThemeToggle />
                                 </div>
                             </div>
@@ -106,8 +115,8 @@ export default function MobileBottomNav() {
                                     key={item.name}
                                     href={item.href}
                                     className={`flex flex-col items-center justify-center gap-1 w-14 h-12 rounded-2xl transition-all active:scale-90 ${isActive
-                                        ? "text-codo-green"
-                                        : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
+                                            ? "text-codo-green"
+                                            : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
                                         }`}
                                 >
                                     <Icon size={20} className={isActive ? "fill-codo-green/20" : ""} />
@@ -120,11 +129,11 @@ export default function MobileBottomNav() {
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className={`flex flex-col items-center justify-center gap-1 w-14 h-12 rounded-2xl transition-all active:scale-90 ${isMenuOpen
-                                ? "text-codo-green"
-                                : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
+                                    ? "text-codo-green"
+                                    : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
                                 }`}
                         >
-                            <Menu size={20} className={isMenuOpen ? "fill-codo-green/20" : ""} />
+                            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
                             <span className="text-[10px] font-medium leading-none">Menu</span>
                         </button>
                     </div>
