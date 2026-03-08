@@ -57,7 +57,7 @@ export default function Services() {
     const yRight = useTransform(scrollYProgress, [0, 1], [40, -80]);
 
     return (
-        <section ref={sectionRef} className="py-24 md:py-32 relative overflow-hidden">
+        <section ref={sectionRef} className="py-24 relative overflow-hidden">
             {/* Ambient Animated Glowing Orb */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <div

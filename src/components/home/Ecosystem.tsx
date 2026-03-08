@@ -101,7 +101,7 @@ export default function Ecosystem() {
 
 
     return (
-        <section ref={sectionRef} className="container max-w-7xl mx-auto px-4 md:px-8 pb-16 relative">
+        <section ref={sectionRef} className="container max-w-7xl mx-auto px-4 md:px-8 py-24 relative">
 
             {/* ─── PART 1: Cinematic Split-Text Parallax Reveal ─── */}
             <div ref={narrativeRef} className="min-h-[80vh] md:min-h-[100svh] flex items-center justify-center py-12 md:py-20 relative">
