@@ -71,3 +71,14 @@
     transform: translateX(200%) skewX(-15deg);
   }
 }
+
+/* Rotating conic-gradient border for glass cards */
+@keyframes borderSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -217,94 +217,123 @@ export default function Ecosystem() {
                 </motion.p>
             </div>
 
-            {/* ─── PART 5: Premium Ecosystem Cards ─── */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* ─── PART 5: Glass Command Deck Cards ─── */}
+            <div className="flex flex-col gap-8 max-w-5xl mx-auto">
 
-                {/* CODO Agency Card */}
+                {/* ── CODO Agency Card ── */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="relative group perspective-1000"
+                    initial={{ opacity: 0, x: -60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="relative group"
                 >
-                    {/* Card Surface - High Contrast & Sharp Shadow */}
-                    <div className="relative h-full overflow-hidden rounded-codo p-[1.5px] bg-gradient-to-b from-black/5 to-transparent dark:from-white/10 dark:to-transparent shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-transform duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02]">
-                        <div className="absolute inset-0 bg-white/80 dark:bg-[#00152b]/80 backdrop-blur-sm" />
+                    {/* Animated Rotating Border Shine */}
+                    <div className="absolute -inset-[1px] rounded-3xl overflow-hidden pointer-events-none z-0">
+                        <div
+                            className="absolute inset-[-80%] opacity-40 group-hover:opacity-80 transition-opacity duration-700"
+                            style={{
+                                background: "conic-gradient(from 0deg, transparent 0%, transparent 60%, rgba(0,135,100,0.6) 75%, rgba(0,32,63,0.5) 85%, transparent 100%)",
+                                animation: "borderSpin 4s linear infinite",
+                            }}
+                        />
+                    </div>
 
-                        {/* Light Sweep Effect */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-                        </div>
+                    {/* Glass Card Surface */}
+                    <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
 
-                        {/* Content Container */}
-                        <div className="relative h-full p-8 md:p-10 flex flex-col z-10">
-                            {/* Background Watermark Icon */}
-                            <Code2 className="absolute -right-8 -bottom-8 w-64 h-64 text-codo-blue/[0.03] dark:text-codo-aqua/5 rotate-[-15deg] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0 pointer-events-none" />
+                        {/* Content: Horizontal Layout */}
+                        <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 p-8 md:p-10 z-10">
 
-                            <div className="h-16 w-16 rounded-2xl bg-codo-blue/5 dark:bg-gradient-to-br dark:from-codo-aqua/20 dark:to-transparent border border-black/5 dark:border-white/20 flex items-center justify-center mb-8 text-codo-blue dark:text-codo-aqua shadow-sm relative overflow-hidden">
-                                <Code2 className="h-8 w-8 relative z-10" />
+                            {/* Icon Pill */}
+                            <div className="flex-shrink-0 h-16 w-16 md:h-20 md:w-20 rounded-2xl bg-codo-blue/8 dark:bg-codo-aqua/10 border border-black/5 dark:border-white/10 flex items-center justify-center text-codo-blue dark:text-codo-aqua shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:shadow-codo-blue/20 dark:group-hover:shadow-codo-aqua/20">
+                                <Code2 className="h-8 w-8 md:h-10 md:w-10" />
                             </div>
 
-                            <h3 className="text-3xl font-extrabold text-foreground mb-4 tracking-tight">CODO Agency</h3>
+                            {/* Text Content */}
+                            <div className="flex-grow min-w-0">
+                                <h3 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight mb-2">
+                                    <span className="text-codo-blue dark:text-codo-aqua">CODO Agency</span> — Engineering Digital Excellence.
+                                </h3>
+                                <p className="text-foreground/65 dark:text-white/60 leading-relaxed text-base md:text-lg mb-5">
+                                    Our service arm delivering elite custom software, complex architectures, and cutting-edge AI integrations for visionaries.
+                                </p>
 
-                            <p className="text-foreground/75 leading-relaxed text-lg mb-8 flex-grow">
-                                Our service arm delivering elite custom web development, complex software architectures, mobile applications, and cutting-edge AI integrations for visionaries.
-                            </p>
+                                {/* Capability Pills */}
+                                <div className="flex flex-wrap gap-2">
+                                    {["Web Development", "AI Solutions", "Mobile Apps", "Software Architecture"].map((cap) => (
+                                        <span key={cap} className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-codo-blue/5 dark:bg-codo-aqua/10 text-codo-blue/80 dark:text-codo-aqua/80 border border-codo-blue/10 dark:border-codo-aqua/15">
+                                            {cap}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
 
-                            <Link href="/portfolio" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-codo-green px-6 py-3 font-semibold text-white transition-all shadow-md hover:shadow-codo-green/30 hover:-translate-y-0.5 w-max">
-                                <span className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-out group-hover/btn:translate-y-0" />
-                                <span className="relative flex items-center">
-                                    View Digital Portfolio
-                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                                </span>
+                            {/* CTA Arrow */}
+                            <Link href="/portfolio" className="flex-shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-2xl bg-codo-green flex items-center justify-center text-white shadow-lg hover:shadow-codo-green/40 transition-all duration-300 hover:-translate-y-1 hover:scale-105 group/arrow">
+                                <ArrowRight className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover/arrow:translate-x-0.5" />
                             </Link>
                         </div>
                     </div>
                 </motion.div>
 
-                {/* CODO Academy Card */}
+                {/* ── CODO Academy Card ── */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.15 }}
-                    className="relative group perspective-1000"
+                    initial={{ opacity: 0, x: 60 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-80px" }}
+                    transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+                    className="relative group"
                 >
-                    {/* Card Surface - High Contrast & Sharp Shadow */}
-                    <div className="relative h-full overflow-hidden rounded-codo p-[1.5px] bg-gradient-to-b from-black/5 to-transparent dark:from-white/10 dark:to-transparent shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-transform duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02]">
-                        <div className="absolute inset-0 bg-white/80 dark:bg-[#00152b]/80 backdrop-blur-sm" />
+                    {/* Animated Rotating Border Shine */}
+                    <div className="absolute -inset-[1px] rounded-3xl overflow-hidden pointer-events-none z-0">
+                        <div
+                            className="absolute inset-[-80%] opacity-40 group-hover:opacity-80 transition-opacity duration-700"
+                            style={{
+                                background: "conic-gradient(from 180deg, transparent 0%, transparent 60%, rgba(0,135,100,0.6) 75%, rgba(240,243,255,0.4) 85%, transparent 100%)",
+                                animation: "borderSpin 4s linear infinite",
+                            }}
+                        />
+                    </div>
 
-                        {/* Light Sweep Effect */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-                        </div>
+                    {/* Glass Card Surface */}
+                    <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
 
-                        {/* Content Container */}
-                        <div className="relative h-full p-8 md:p-10 flex flex-col z-10">
-                            {/* Background Watermark Icon */}
-                            <GraduationCap className="absolute -right-8 -bottom-8 w-64 h-64 text-codo-green/[0.03] rotate-[-15deg] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0 pointer-events-none" />
+                        {/* Content: Horizontal Layout */}
+                        <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 p-8 md:p-10 z-10">
 
-                            <div className="h-16 w-16 rounded-2xl bg-codo-green/5 dark:bg-gradient-to-br dark:from-codo-green/20 dark:to-transparent border border-black/5 dark:border-white/20 flex items-center justify-center mb-8 text-codo-green shadow-sm relative overflow-hidden">
-                                <GraduationCap className="h-8 w-8 relative z-10" />
+                            {/* Icon Pill */}
+                            <div className="flex-shrink-0 h-16 w-16 md:h-20 md:w-20 rounded-2xl bg-codo-green/8 dark:bg-codo-green/12 border border-black/5 dark:border-white/10 flex items-center justify-center text-codo-green shadow-sm transition-all duration-500 group-hover:scale-110 group-hover:shadow-codo-green/20">
+                                <GraduationCap className="h-8 w-8 md:h-10 md:w-10" />
                             </div>
 
-                            <h3 className="text-3xl font-extrabold text-foreground mb-4 tracking-tight">CODO Academy</h3>
+                            {/* Text Content */}
+                            <div className="flex-grow min-w-0">
+                                <h3 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight mb-2">
+                                    <span className="text-codo-green">CODO Academy</span> — Catalyzing a Digital Revolution.
+                                </h3>
+                                <p className="text-foreground/65 dark:text-white/60 leading-relaxed text-base md:text-lg mb-5">
+                                    Our education arm training 100,000 individuals in Python Full-Stack, Machine Learning, and Robotics to lead the future.
+                                </p>
 
-                            <p className="text-foreground/75 leading-relaxed text-lg mb-8 flex-grow">
-                                Our education arm dedicated to catalyzing a digital revolution by training 100,000 individuals in Python Full-Stack, Machine Learning, and Robotics.
-                            </p>
+                                {/* Capability Pills */}
+                                <div className="flex flex-wrap gap-2">
+                                    {["Python Full-Stack", "Machine Learning", "Robotics", "Career Launch"].map((cap) => (
+                                        <span key={cap} className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-codo-green/5 dark:bg-codo-green/10 text-codo-green/80 border border-codo-green/10 dark:border-codo-green/15">
+                                            {cap}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
 
-                            <Link href="https://codoacademy.com" target="_blank" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-codo-green px-6 py-3 font-semibold text-white transition-all shadow-md hover:shadow-codo-green/30 hover:-translate-y-0.5 w-max">
-                                <span className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-out group-hover/btn:translate-y-0" />
-                                <span className="relative flex items-center">
-                                    Visit Academy Hub
-                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                                </span>
+                            {/* CTA Arrow */}
+                            <Link href="https://codoacademy.com" target="_blank" className="flex-shrink-0 h-12 w-12 md:h-14 md:w-14 rounded-2xl bg-codo-green flex items-center justify-center text-white shadow-lg hover:shadow-codo-green/40 transition-all duration-300 hover:-translate-y-1 hover:scale-105 group/arrow">
+                                <ArrowRight className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover/arrow:translate-x-0.5" />
                             </Link>
                         </div>
                     </div>
                 </motion.div>
+
             </div>
         </section>
     );
