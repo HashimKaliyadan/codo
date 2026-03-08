@@ -13,9 +13,6 @@ export default function Footer() {
 
     return (
         <footer className="bg-codo-blue pt-20 pb-10 text-white relative overflow-hidden">
-            {/* Top decorative border */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-codo-green via-codo-aqua to-codo-blue" />
-
             <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     {/* Brand Section */}
