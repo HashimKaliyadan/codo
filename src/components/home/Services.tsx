@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Monitor, Smartphone, Code, BrainCircuit, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
+import { SpotlightCard } from "../ui/spotlight-card";
 
 const services = [
     {
@@ -117,12 +118,8 @@ export default function Services() {
                                 className={`${service.spanClass} group relative rounded-[32px] overflow-hidden p-[1px]`}
                             >
                                 {/* Card Content Surface - Enhanced Frosted Glassmorphism */}
-                                <div className="relative h-full flex flex-col bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl rounded-[31px] p-8 md:p-10 transition-colors duration-500 hover:bg-white/70 dark:hover:bg-[#00101f]/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] z-10">
+                                <SpotlightCard className="relative h-full flex flex-col bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl rounded-[31px] p-8 md:p-10 transition-colors duration-500 hover:bg-white/70 dark:hover:bg-[#00101f]/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] z-10">
 
-                                    {/* Light Sweep Effect (Inside) */}
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
-                                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-                                    </div>
 
                                     {/* Top Header: Icon & Arrow */}
                                     <div className="flex justify-between items-start mb-12">
@@ -144,7 +141,7 @@ export default function Services() {
                                     <div className="absolute bottom-4 right-6 text-[8rem] font-black leading-none text-foreground/[0.03] dark:text-white/[0.02] -z-0 select-none transition-transform duration-700 group-hover:-translate-y-4">
                                         {service.num}
                                     </div>
-                                </div>
+                                </SpotlightCard>
                             </motion.div>
                         );
                     })}

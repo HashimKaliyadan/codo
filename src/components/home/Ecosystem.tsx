@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Code2, GraduationCap } from "lucide-react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useEffect, useState, useCallback, useLayoutEffect } from "react";
+import { SpotlightCard } from "../ui/spotlight-card";
 
 // ── Inline useCountUp Hook ───────────────────────────────────────────
 function useCountUp(target: number, duration: number = 2000, startOnView: boolean = true) {
@@ -226,15 +227,11 @@ export default function Ecosystem() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative group"
+                    className="relative group block"
                 >
                     {/* Glass Card Surface */}
-                    <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
+                    <SpotlightCard className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
 
-                        {/* Light Sweep Effect (Inside) */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-                        </div>
 
                         {/* Content: Horizontal Layout */}
                         <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 p-8 md:p-10 z-10">
@@ -259,7 +256,7 @@ export default function Ecosystem() {
                                 <ArrowRight className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover/arrow:translate-x-0.5" />
                             </Link>
                         </div>
-                    </div>
+                    </SpotlightCard>
                 </motion.div>
 
                 {/* ── CODO Academy Card ── */}
@@ -268,15 +265,11 @@ export default function Ecosystem() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-                    className="relative group"
+                    className="relative group block"
                 >
                     {/* Glass Card Surface */}
-                    <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
+                    <SpotlightCard className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
 
-                        {/* Light Sweep Effect (Inside) */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-                        </div>
 
                         {/* Content: Horizontal Layout */}
                         <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 p-8 md:p-10 z-10">
@@ -301,7 +294,7 @@ export default function Ecosystem() {
                                 <ArrowRight className="h-5 w-5 md:h-6 md:w-6 transition-transform group-hover/arrow:translate-x-0.5" />
                             </Link>
                         </div>
-                    </div>
+                    </SpotlightCard>
                 </motion.div>
 
             </div>

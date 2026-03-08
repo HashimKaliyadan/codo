@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ArrowRight, Phone, Sparkles } from "lucide-react";
 import { CodoButton } from "../ui/codo-button";
 import SalesAdvisorModal from "./SalesAdvisorModal";
+import { SpotlightCard } from "../ui/spotlight-card";
 
 export default function CtaSection() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,11 +20,7 @@ export default function CtaSection() {
                     className="relative group p-[1px] rounded-[2.5rem] overflow-hidden"
                 >
                     {/* Glass Card Surface */}
-                    <div className="relative h-full w-full overflow-hidden rounded-[2.45rem] bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-3xl border border-white/20 dark:border-white/10 p-10 md:p-16 text-center shadow-2xl z-10">
-                        {/* Light Sweep Effect (Inside) */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
-                        </div>
+                    <SpotlightCard className="relative h-full w-full overflow-hidden rounded-[2.45rem] bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-3xl border border-white/20 dark:border-white/10 p-10 md:p-16 text-center shadow-2xl z-10">
                         {/* Decorative Background Elements */}
                         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
                             <Sparkles className="w-32 h-32 text-codo-aqua" />
@@ -57,7 +54,7 @@ export default function CtaSection() {
                                 </CodoButton>
                             </div>
                         </div>
-                    </div>
+                    </SpotlightCard>
                 </motion.div>
             </div>
 
