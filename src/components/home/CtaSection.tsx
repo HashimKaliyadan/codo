@@ -20,7 +20,7 @@ export default function CtaSection() {
                     className="relative group p-[1px] rounded-[2.5rem] overflow-hidden"
                 >
                     {/* Glass Card Surface */}
-                    <SpotlightCard className="relative h-full w-full overflow-hidden rounded-[2.45rem] bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-3xl border border-white/20 dark:border-white/10 p-10 md:p-16 text-center shadow-2xl z-10">
+                    <SpotlightCard className="relative h-full w-full overflow-hidden rounded-[2.45rem] bg-codo-blue/[0.04] dark:bg-[#00101f]/70 backdrop-blur-3xl border border-codo-blue/15 dark:border-white/10 p-10 md:p-16 text-center shadow-2xl z-10">
                         {/* Decorative Background Elements */}
                         <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
                             <Sparkles className="w-32 h-32 text-codo-aqua" />

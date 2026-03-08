@@ -230,7 +230,7 @@ export default function Ecosystem() {
                     className="relative group block"
                 >
                     {/* Glass Card Surface */}
-                    <SpotlightCard className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
+                    <SpotlightCard className="relative overflow-hidden rounded-3xl bg-codo-blue/[0.04] dark:bg-[#00101f]/70 backdrop-blur-2xl border border-codo-blue/15 dark:border-white/8 shadow-[0_8px_40px_rgba(0,32,63,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
 
 
                         {/* Content: Horizontal Layout */}
@@ -268,7 +268,7 @@ export default function Ecosystem() {
                     className="relative group block"
                 >
                     {/* Glass Card Surface */}
-                    <SpotlightCard className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
+                    <SpotlightCard className="relative overflow-hidden rounded-3xl bg-codo-green/[0.04] dark:bg-[#00101f]/70 backdrop-blur-2xl border border-codo-green/15 dark:border-white/8 shadow-[0_8px_40px_rgba(0,135,100,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
 
 
                         {/* Content: Horizontal Layout */}
