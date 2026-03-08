@@ -65,7 +65,7 @@ export default function MobileBottomNav() {
                                     </button>
                                 </div>
 
-                                <div className="flex flex-col gap-1 max-h-[50vh] overflow-y-auto hide-scrollbar">
+                                <div className="flex flex-col gap-1 overflow-y-auto hide-scrollbar" style={{ maxHeight: 'calc(100svh - 220px)' }}>
                                     {fullNavLinks.map((link) => {
                                         const isActive = pathname === link.href;
                                         return (
@@ -106,8 +106,8 @@ export default function MobileBottomNav() {
                                     key={item.name}
                                     href={item.href}
                                     className={`flex flex-col items-center justify-center gap-1 w-14 h-12 rounded-2xl transition-all active:scale-90 ${isActive
-                                            ? "text-codo-green"
-                                            : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
+                                        ? "text-codo-green"
+                                        : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
                                         }`}
                                 >
                                     <Icon size={20} className={isActive ? "fill-codo-green/20" : ""} />
@@ -120,8 +120,8 @@ export default function MobileBottomNav() {
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className={`flex flex-col items-center justify-center gap-1 w-14 h-12 rounded-2xl transition-all active:scale-90 ${isMenuOpen
-                                    ? "text-codo-green"
-                                    : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
+                                ? "text-codo-green"
+                                : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
                                 }`}
                         >
                             <Menu size={20} className={isMenuOpen ? "fill-codo-green/20" : ""} />
