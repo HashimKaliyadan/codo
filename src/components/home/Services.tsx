@@ -116,21 +116,13 @@ export default function Services() {
                                 transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                                 className={`${service.spanClass} group relative rounded-[32px] overflow-hidden p-[1px]`}
                             >
-                                {/* Animated Rotating Border Shine */}
-                                <div className="absolute -inset-[1px] rounded-[32px] overflow-hidden pointer-events-none z-0">
-                                    <div
-                                        className="absolute inset-[-100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                                        style={{
-                                            background: index % 2 === 0
-                                                ? "conic-gradient(from 0deg, transparent 0%, transparent 60%, rgba(0,135,100,0.6) 75%, rgba(0,32,63,0.5) 85%, transparent 100%)"
-                                                : "conic-gradient(from 180deg, transparent 0%, transparent 60%, rgba(0,135,100,0.6) 75%, rgba(240,243,255,0.4) 85%, transparent 100%)",
-                                            animation: "borderSpin 4s linear infinite",
-                                        }}
-                                    />
-                                </div>
-
                                 {/* Card Content Surface - Enhanced Frosted Glassmorphism */}
                                 <div className="relative h-full flex flex-col bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl rounded-[31px] p-8 md:p-10 transition-colors duration-500 hover:bg-white/70 dark:hover:bg-[#00101f]/80 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] z-10">
+
+                                    {/* Light Sweep Effect (Inside) */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+                                    </div>
 
                                     {/* Top Header: Icon & Arrow */}
                                     <div className="flex justify-between items-start mb-12">

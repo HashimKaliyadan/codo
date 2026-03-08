@@ -228,19 +228,13 @@ export default function Ecosystem() {
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="relative group"
                 >
-                    {/* Animated Rotating Border Shine */}
-                    <div className="absolute -inset-[1px] rounded-3xl overflow-hidden pointer-events-none z-0">
-                        <div
-                            className="absolute inset-[-80%] opacity-40 group-hover:opacity-80 transition-opacity duration-700"
-                            style={{
-                                background: "conic-gradient(from 0deg, transparent 0%, transparent 60%, rgba(0,135,100,0.6) 75%, rgba(0,32,63,0.5) 85%, transparent 100%)",
-                                animation: "borderSpin 4s linear infinite",
-                            }}
-                        />
-                    </div>
-
                     {/* Glass Card Surface */}
                     <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
+
+                        {/* Light Sweep Effect (Inside) */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+                        </div>
 
                         {/* Content: Horizontal Layout */}
                         <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 p-8 md:p-10 z-10">
@@ -253,20 +247,11 @@ export default function Ecosystem() {
                             {/* Text Content */}
                             <div className="flex-grow min-w-0">
                                 <h3 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight mb-2">
-                                    <span className="text-codo-blue dark:text-codo-aqua">CODO Agency</span> — Engineering Digital Excellence.
+                                    <span className="text-codo-blue dark:text-codo-aqua">CODO Agency</span>
                                 </h3>
-                                <p className="text-foreground/65 dark:text-white/60 leading-relaxed text-base md:text-lg mb-5">
+                                <p className="text-foreground/65 dark:text-white/60 leading-relaxed text-base md:text-lg">
                                     Our service arm delivering elite custom software, complex architectures, and cutting-edge AI integrations for visionaries.
                                 </p>
-
-                                {/* Capability Pills */}
-                                <div className="flex flex-wrap gap-2">
-                                    {["Web Development", "AI Solutions", "Mobile Apps", "Software Architecture"].map((cap) => (
-                                        <span key={cap} className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-codo-blue/5 dark:bg-codo-aqua/10 text-codo-blue/80 dark:text-codo-aqua/80 border border-codo-blue/10 dark:border-codo-aqua/15">
-                                            {cap}
-                                        </span>
-                                    ))}
-                                </div>
                             </div>
 
                             {/* CTA Arrow */}
@@ -285,19 +270,13 @@ export default function Ecosystem() {
                     transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
                     className="relative group"
                 >
-                    {/* Animated Rotating Border Shine */}
-                    <div className="absolute -inset-[1px] rounded-3xl overflow-hidden pointer-events-none z-0">
-                        <div
-                            className="absolute inset-[-80%] opacity-40 group-hover:opacity-80 transition-opacity duration-700"
-                            style={{
-                                background: "conic-gradient(from 180deg, transparent 0%, transparent 60%, rgba(0,135,100,0.6) 75%, rgba(240,243,255,0.4) 85%, transparent 100%)",
-                                animation: "borderSpin 4s linear infinite",
-                            }}
-                        />
-                    </div>
-
                     {/* Glass Card Surface */}
                     <div className="relative overflow-hidden rounded-3xl bg-white/60 dark:bg-[#00101f]/70 backdrop-blur-2xl border border-white/15 dark:border-white/8 shadow-[0_8px_40px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_40px_rgb(0,0,0,0.25)] z-10 transition-transform duration-500 ease-out hover:-translate-y-1">
+
+                        {/* Light Sweep Effect (Inside) */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-0">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+                        </div>
 
                         {/* Content: Horizontal Layout */}
                         <div className="relative flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 p-8 md:p-10 z-10">
@@ -310,20 +289,11 @@ export default function Ecosystem() {
                             {/* Text Content */}
                             <div className="flex-grow min-w-0">
                                 <h3 className="text-2xl md:text-3xl font-extrabold text-foreground tracking-tight mb-2">
-                                    <span className="text-codo-green">CODO Academy</span> — Catalyzing a Digital Revolution.
+                                    <span className="text-codo-green">CODO Academy</span>
                                 </h3>
-                                <p className="text-foreground/65 dark:text-white/60 leading-relaxed text-base md:text-lg mb-5">
+                                <p className="text-foreground/65 dark:text-white/60 leading-relaxed text-base md:text-lg">
                                     Our education arm training 100,000 individuals in Python Full-Stack, Machine Learning, and Robotics to lead the future.
                                 </p>
-
-                                {/* Capability Pills */}
-                                <div className="flex flex-wrap gap-2">
-                                    {["Python Full-Stack", "Machine Learning", "Robotics", "Career Launch"].map((cap) => (
-                                        <span key={cap} className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-codo-green/5 dark:bg-codo-green/10 text-codo-green/80 border border-codo-green/10 dark:border-codo-green/15">
-                                            {cap}
-                                        </span>
-                                    ))}
-                                </div>
                             </div>
 
                             {/* CTA Arrow */}
