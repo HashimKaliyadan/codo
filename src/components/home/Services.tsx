@@ -100,7 +100,7 @@ export default function Services() {
                 </div>
 
                 {/* ─── Premium Bento Grid Layout ─── */}
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-6 relative">
+                <div className="flex md:grid md:grid-cols-12 gap-6 relative overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-8 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 hide-scrollbar">
                     {services.map((service, index) => {
                         // Determine which column this conceptually belongs to for parallax.
                         // Wide cards are left, square cards are right.
@@ -115,7 +115,7 @@ export default function Services() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true, margin: "-50px" }}
                                 transition={{ delay: index * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                                className={`${service.spanClass} group relative rounded-[32px] overflow-hidden p-[1px]`}
+                                className={`${service.spanClass} group relative rounded-[32px] overflow-hidden p-[1px] min-w-[85vw] sm:min-w-[300px] md:min-w-0 snap-center shrink-0`}
                             >
                                 {/* Card Content Surface - Enhanced Frosted Glassmorphism */}
                                 <SpotlightCard className="relative h-full flex flex-col bg-slate-50/80 dark:bg-[#00101f]/70 backdrop-blur-2xl rounded-[31px] p-8 md:p-10 transition-colors duration-500 hover:bg-slate-100/90 dark:hover:bg-[#00101f]/80 border border-slate-200/60 dark:border-white/10 shadow-sm dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] z-10">

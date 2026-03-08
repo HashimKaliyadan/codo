@@ -33,16 +33,25 @@ export default function CtaSection() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto mt-4">
-                                <button
-                                    onClick={() => setIsModalOpen(true)}
-                                    className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-codo-green px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-green/90 hover:-translate-y-1 hover:shadow-2xl gap-3 w-full sm:w-auto"
-                                >
-                                    <Phone size={18} /> Talk to an Advisor
-                                </button>
+                                {/* Mobile: Native Action (WhatsApp) | Desktop: Modal */}
+                                <div className="w-full sm:w-auto">
+                                    <a
+                                        href="https://wa.me/918848676627"
+                                        className="sm:hidden group inline-flex h-12 w-full items-center justify-center rounded-2xl bg-codo-green px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all active:scale-95 gap-3"
+                                    >
+                                        <Phone size={18} /> Talk to an Advisor
+                                    </a>
+                                    <button
+                                        onClick={() => setIsModalOpen(true)}
+                                        className="hidden sm:inline-flex group h-14 items-center justify-center rounded-2xl bg-codo-green px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-green/90 hover:-translate-y-1 hover:shadow-2xl active:scale-95 gap-3"
+                                    >
+                                        <Phone size={18} /> Talk to an Advisor
+                                    </button>
+                                </div>
 
                                 <a
                                     href="/portfolio"
-                                    className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-transparent px-8 font-medium text-foreground dark:text-white shadow-sm backdrop-blur-xl border border-foreground/20 dark:border-white/20 transition-all hover:bg-foreground/5 dark:hover:bg-white/10 hover:-translate-y-1 gap-3 w-full sm:w-auto"
+                                    className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-transparent px-8 font-medium text-foreground dark:text-white shadow-sm backdrop-blur-xl border border-foreground/20 dark:border-white/20 transition-all hover:bg-foreground/5 dark:hover:bg-white/10 hover:-translate-y-1 active:scale-95 gap-3 w-full sm:w-auto"
                                 >
                                     View Portfolio <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                                 </a>

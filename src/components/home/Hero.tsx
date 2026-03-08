@@ -63,11 +63,18 @@ export default function Hero() {
 
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
                     {/* Primary Glass Button */}
-                    <Link href="/portfolio" className="inline-flex h-14 items-center justify-center rounded-2xl bg-codo-blue/60 px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-blue/70 hover:-translate-y-1 hover:shadow-2xl w-full sm:w-auto dark:bg-codo-aqua/70 dark:text-codo-blue dark:border-white/30 dark:hover:bg-codo-aqua/80">
-                        <Code2 className="mr-2 h-5 w-5" /> Work With Our Agency
-                    </Link>
+                    <div className="w-full sm:w-auto">
+                        {/* Mobile: Native Action (WhatsApp) */}
+                        <a href="https://wa.me/918848676627" className="sm:hidden inline-flex h-14 items-center justify-center rounded-2xl bg-codo-blue/60 px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all active:scale-95 w-full dark:bg-codo-aqua/70 dark:text-codo-blue dark:border-white/30">
+                            <Code2 className="mr-2 h-5 w-5" /> Start Your Project
+                        </a>
+                        {/* Desktop: Internal Link */}
+                        <Link href="/portfolio" className="hidden sm:inline-flex h-14 items-center justify-center rounded-2xl bg-codo-blue/60 px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-blue/70 hover:-translate-y-1 hover:shadow-2xl dark:bg-codo-aqua/70 dark:text-codo-blue dark:border-white/30 dark:hover:bg-codo-aqua/80">
+                            <Code2 className="mr-2 h-5 w-5" /> Work With Our Agency
+                        </Link>
+                    </div>
                     {/* Secondary Glass Button */}
-                    <Link href="https://codoacademy.com" target="_blank" className="inline-flex h-14 items-center justify-center rounded-2xl bg-white/30 backdrop-blur-xl border border-white/40 px-8 font-medium text-codo-blue shadow-lg transition-all hover:bg-white/40 hover:-translate-y-1 hover:shadow-xl w-full sm:w-auto dark:bg-black/30 dark:border-white/20 dark:text-codo-aqua dark:hover:bg-black/40">
+                    <Link href="https://codoacademy.com" target="_blank" className="inline-flex h-14 items-center justify-center rounded-2xl bg-white/30 backdrop-blur-xl border border-white/40 px-8 font-medium text-codo-blue shadow-lg transition-all hover:bg-white/40 hover:-translate-y-1 hover:shadow-xl active:scale-95 w-full sm:w-auto dark:bg-black/30 dark:border-white/20 dark:text-codo-aqua dark:hover:bg-black/40">
                         <GraduationCap className="mr-2 h-5 w-5" /> Explore CODO Academy
                     </Link>
                 </motion.div>

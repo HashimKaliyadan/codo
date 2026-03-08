@@ -61,7 +61,7 @@ export default function Portfolio() {
                     >
                         <Link
                             href="/portfolio"
-                            className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-codo-blue/60 px-6 md:px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-blue/70 hover:-translate-y-1 hover:shadow-2xl dark:bg-codo-aqua/70 dark:text-codo-blue dark:border-white/30 dark:hover:bg-codo-aqua/80 gap-2"
+                            className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-codo-blue/60 px-6 md:px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-blue/70 hover:-translate-y-1 hover:shadow-2xl active:scale-95 dark:bg-codo-aqua/70 dark:text-codo-blue dark:border-white/30 dark:hover:bg-codo-aqua/80 gap-2"
                         >
                             View Full Portfolio <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
                         </Link>

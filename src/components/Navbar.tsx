@@ -98,10 +98,10 @@ export default function Navbar() {
                                 <Phone size={20} className="group-hover/phone:rotate-12 transition-transform" />
                             </button>
 
-                            {/* Mobile Menu Button - shows when nav is hidden (< lg) */}
+                            {/* Mobile Menu Button - Now hidden by default, replaced by bottom nav */}
                             <button
                                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="lg:hidden flex h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors"
+                                className="hidden lg:hidden h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors"
                                 aria-label="Toggle menu"
                             >
                                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
