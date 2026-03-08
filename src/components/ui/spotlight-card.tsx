@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface SpotlightCardProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
@@ -18,9 +18,23 @@ export function SpotlightCard({
 }: SpotlightCardProps) {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+    useEffect(() => {
+        setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches);
+    }, []);
+
+    const background = useMotionTemplate`
+        radial-gradient(
+            ${radius}px circle at ${mouseX}px ${mouseY}px,
+            ${spotlightColor},
+            transparent 80%
+        )
+    `;
 
     function handleMouseMove({ currentTarget, clientX, clientY }: React.MouseEvent) {
-        let { left, top } = currentTarget.getBoundingClientRect();
+        if (isTouchDevice) return;
+        const { left, top } = currentTarget.getBoundingClientRect();
         mouseX.set(clientX - left);
         mouseY.set(clientY - top);
     }
@@ -31,18 +45,12 @@ export function SpotlightCard({
             onMouseMove={handleMouseMove}
             {...props}
         >
-            <motion.div
-                className="pointer-events-none absolute -inset-px rounded-[inherit] opacity-0 transition duration-300 group-hover:opacity-100 z-0"
-                style={{
-                    background: useMotionTemplate`
-                        radial-gradient(
-                            ${radius}px circle at ${mouseX}px ${mouseY}px,
-                            ${spotlightColor},
-                            transparent 80%
-                        )
-                    `,
-                }}
-            />
+            {!isTouchDevice && (
+                <motion.div
+                    className="pointer-events-none absolute -inset-px rounded-[inherit] opacity-0 transition duration-300 group-hover:opacity-100 z-0"
+                    style={{ background }}
+                />
+            )}
             {children}
         </div>
     );

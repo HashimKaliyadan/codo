@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
     Home, Image, MessageCircle, Menu, X,
-    Info, Layers, BookOpen, Briefcase, Mail
+    Info, BookOpen, Briefcase, Mail
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
@@ -13,7 +13,6 @@ import ThemeToggle from "./ThemeToggle";
 const fullNavLinks = [
     { name: "Home", href: "/", icon: Home },
     { name: "About", href: "/about", icon: Info },
-    { name: "Services", href: "/services", icon: Layers },
     { name: "Portfolio", href: "/portfolio", icon: Image },
     { name: "Blog", href: "/blog", icon: BookOpen },
     { name: "Careers", href: "/careers", icon: Briefcase },
@@ -79,8 +78,8 @@ export default function MobileBottomNav() {
                                                 key={link.href}
                                                 href={link.href}
                                                 className={`flex items-center gap-3 px-4 py-3 rounded-2xl text-[15px] font-semibold transition-all active:scale-[0.98] ${isActive
-                                                        ? "bg-codo-green text-white shadow-md shadow-codo-green/20"
-                                                        : "text-foreground/70 active:bg-foreground/5"
+                                                    ? "bg-codo-green text-white shadow-md shadow-codo-green/20"
+                                                    : "text-foreground/70 active:bg-foreground/5"
                                                     }`}
                                             >
                                                 <Icon size={18} className={isActive ? "opacity-90" : "opacity-40"} />
@@ -115,8 +114,8 @@ export default function MobileBottomNav() {
                                     key={item.name}
                                     href={item.href}
                                     className={`flex flex-col items-center justify-center gap-1 w-14 h-12 rounded-2xl transition-all active:scale-90 ${isActive
-                                            ? "text-codo-green"
-                                            : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
+                                        ? "text-codo-green"
+                                        : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
                                         }`}
                                 >
                                     <Icon size={20} className={isActive ? "fill-codo-green/20" : ""} />
@@ -129,8 +128,8 @@ export default function MobileBottomNav() {
                         <button
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
                             className={`flex flex-col items-center justify-center gap-1 w-14 h-12 rounded-2xl transition-all active:scale-90 ${isMenuOpen
-                                    ? "text-codo-green"
-                                    : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
+                                ? "text-codo-green"
+                                : "text-foreground/50 hover:text-foreground hover:bg-foreground/5"
                                 }`}
                         >
                             {isMenuOpen ? <X size={20} /> : <Menu size={20} />}

@@ -34,7 +34,7 @@ export default function Clients() {
                         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent dark:from-[#00101f] dark:via-[#00101f]/80 z-20 pointer-events-none rounded-r-full" />
 
                         {/* Scrolling Track */}
-                        <div className="flex w-[200%] sm:w-[150%] animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused] group/marquee">
+                        <div className="flex w-[200%] sm:w-[150%] animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused] group/marquee will-change-transform">
                             {duplicatedClients.map((client, index) => (
                                 <div
                                     key={index}

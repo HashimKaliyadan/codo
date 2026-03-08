@@ -11,10 +11,10 @@ const footerLinks = {
         { name: "Contact", href: "/contact" },
     ],
     services: [
-        { name: "Web Development", href: "/services" },
-        { name: "Custom Software", href: "/services" },
-        { name: "Mobile Apps", href: "/services" },
-        { name: "AI Solutions", href: "/services" },
+        { name: "Web Development", href: "/#services" },
+        { name: "Custom Software", href: "/#services" },
+        { name: "Mobile Apps", href: "/#services" },
+        { name: "AI Solutions", href: "/#services" },
     ],
     ecosystem: [
         { name: "CODO Agency", href: "/portfolio" },

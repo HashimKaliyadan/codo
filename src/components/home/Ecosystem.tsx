@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { ArrowRight, Code2, GraduationCap } from "lucide-react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { useRef, useEffect, useState, useCallback, useLayoutEffect } from "react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState, useCallback } from "react";
 import { SpotlightCard } from "../ui/spotlight-card";
 
 // ── Inline useCountUp Hook ───────────────────────────────────────────
@@ -73,91 +73,15 @@ function StatItem({ value, suffix, label, delay }: { value: number; suffix: stri
     );
 }
 
-// ── Narrative Lines Data ────────────────────────────────────────────
-// Combining phrases so words like "Agency" and "Academy" move with their sentences.
-const narrativeLines = [
-    { text: "The central powerhouse driving digital transformation." },
-    {
-        text: "We engineer elite, custom software solutions through our ",
-        highlight: "Agency",
-        color: "green"
-    },
-    {
-        text: "and empower the next generation of tech leaders through our ",
-        highlight: "Academy.",
-        color: "blue"
-    },
-];
+
 
 export default function Ecosystem() {
     const sectionRef = useRef<HTMLElement>(null);
-    const narrativeRef = useRef<HTMLDivElement>(null);
-
-    // Overall narrative scroll tracking
-    const { scrollYProgress } = useScroll({
-        target: narrativeRef,
-        offset: ["start end", "center center"]
-    });
-
 
     return (
         <section ref={sectionRef} className="container max-w-7xl mx-auto px-4 md:px-8 py-24 relative">
 
-            {/* ─── PART 1: Cinematic Split-Text Parallax Reveal ─── */}
-            <div ref={narrativeRef} className="min-h-[80vh] md:min-h-[100svh] flex items-center justify-center py-12 md:py-20 relative">
 
-                {/* Animated Gradient Mesh Background */}
-                <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-                    <div
-                        className="absolute w-[600px] h-[600px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 dark:opacity-15 blur-[120px]"
-                        style={{
-                            background: "radial-gradient(circle, rgba(0,135,100,0.3) 0%, rgba(0,32,63,0.15) 50%, transparent 70%)",
-                            animation: "meshFloat 8s ease-in-out infinite alternate",
-                        }}
-                    />
-                    <div
-                        className="absolute w-[400px] h-[400px] top-1/3 left-1/4 rounded-full opacity-15 dark:opacity-10 blur-[100px]"
-                        style={{
-                            background: "radial-gradient(circle, rgba(0,32,63,0.25) 0%, transparent 60%)",
-                            animation: "meshFloat 10s ease-in-out 2s infinite alternate-reverse",
-                        }}
-                    />
-                </div>
-
-                <div className="max-w-4xl mx-auto text-center px-4">
-                    <div className="text-2xl md:text-3xl lg:text-4xl font-medium leading-relaxed md:leading-relaxed text-foreground/90 dark:text-white/90 space-y-4">
-                        {narrativeLines.map((line, i) => {
-                            // Each line gets its own staggered parallax offset
-                            const startOffset = 0.1 + i * 0.15;
-                            const endOffset = Math.min(startOffset + 0.4, 1);
-
-                            // eslint-disable-next-line react-hooks/rules-of-hooks
-                            const y = useTransform(scrollYProgress, [startOffset, endOffset], [40, 0]);
-                            // eslint-disable-next-line react-hooks/rules-of-hooks
-                            const opacity = useTransform(scrollYProgress, [startOffset, endOffset], [0, 1]);
-
-                            return (
-                                <motion.div
-                                    key={i}
-                                    style={{ y, opacity }}
-                                    className="block"
-                                >
-                                    {line.text}
-                                    {line.highlight && (
-                                        <span className={
-                                            line.color === "green"
-                                                ? "text-codo-green font-bold drop-shadow-[0_0_15px_rgba(0,135,100,0.4)]"
-                                                : "text-codo-blue dark:text-codo-aqua font-bold drop-shadow-[0_0_15px_rgba(0,32,63,0.3)] dark:drop-shadow-[0_0_15px_rgba(240,243,255,0.3)]"
-                                        }>
-                                            {line.highlight}
-                                        </span>
-                                    )}
-                                </motion.div>
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
 
             {/* ─── PART 2: Animated Stats Counter Bar ─── */}
             <motion.div
