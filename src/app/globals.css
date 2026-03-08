@@ -82,3 +82,14 @@
     transform: rotate(360deg);
   }
 }
+
+/* Infinite horizontal scrolling for client logos */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}

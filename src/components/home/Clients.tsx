@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { SpotlightCard } from "../ui/spotlight-card";
 
 const clients = [
     { name: "Acme Corp", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Oikya_Front_Logo.png" },
@@ -12,39 +13,42 @@ const clients = [
 ];
 
 export default function Clients() {
+    // Duplicate the clients array to create a seamless infinite scroll effect
+    const duplicatedClients = [...clients, ...clients, ...clients];
+
     return (
-        <section className="py-20 border-y border-border/50 overflow-hidden">
+        <section className="py-24 relative overflow-hidden">
             <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-10">
-                    <p className="text-sm font-semibold text-foreground/60 tracking-widest uppercase">
+                <div className="text-center mb-12">
+                    <p className="text-sm font-bold text-foreground/50 tracking-[0.2em] uppercase">
                         Trusted by Innovative Companies Worldwide
                     </p>
                 </div>
 
-                <div className="relative">
-                    {/* Gradient Fade Edges */}
-                    <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-zinc-50 to-transparent dark:from-[#000d1a] z-10 pointer-events-none" />
-                    <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-zinc-50 to-transparent dark:from-[#000d1a] z-10 pointer-events-none" />
+                <div className="relative max-w-5xl mx-auto">
+                    {/* Glass Pill Container */}
+                    <SpotlightCard className="relative overflow-hidden rounded-full bg-slate-50/50 dark:bg-[#00101f]/40 backdrop-blur-xl border border-slate-200/50 dark:border-white/5 shadow-sm py-8 md:py-10">
 
-                    {/* Logo Grid / Flex Container */}
-                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70">
-                        {clients.map((client, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1, duration: 0.5 }}
-                                className="w-24 md:w-32 h-12 flex items-center justify-center grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
-                            >
-                                <img
-                                    src={client.logo}
-                                    alt={client.name}
-                                    className="max-w-full max-h-full object-contain filter invert-0 dark:invert opacity-80"
-                                />
-                            </motion.div>
-                        ))}
-                    </div>
+                        {/* Gradient Fade Edges inside the glass */}
+                        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent dark:from-[#00101f] dark:via-[#00101f]/80 z-20 pointer-events-none rounded-l-full" />
+                        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent dark:from-[#00101f] dark:via-[#00101f]/80 z-20 pointer-events-none rounded-r-full" />
+
+                        {/* Scrolling Track */}
+                        <div className="flex w-[200%] sm:w-[150%] animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused] group/marquee">
+                            {duplicatedClients.map((client, index) => (
+                                <div
+                                    key={index}
+                                    className="w-32 md:w-48 flex-shrink-0 flex items-center justify-center px-4 transition-all duration-300"
+                                >
+                                    <img
+                                        src={client.logo}
+                                        alt={client.name}
+                                        className="max-w-[70%] max-h-10 md:max-h-12 object-contain filter grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 dark:invert"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </SpotlightCard>
                 </div>
             </div>
         </section>
