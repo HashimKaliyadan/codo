@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowRight, Phone, Sparkles } from "lucide-react";
-import { CodoButton } from "../ui/codo-button";
+import { ArrowRight, Phone } from "lucide-react";
 import SalesAdvisorModal from "./SalesAdvisorModal";
 import { SpotlightCard } from "../ui/spotlight-card";
 
@@ -22,9 +21,6 @@ export default function CtaSection() {
                     {/* Glass Card Surface */}
                     <SpotlightCard className="relative h-full w-full overflow-hidden rounded-[2.45rem] bg-codo-blue/[0.04] dark:bg-[#00101f]/70 backdrop-blur-3xl border border-codo-blue/15 dark:border-white/10 p-10 md:p-16 text-center shadow-2xl z-10">
                         {/* Decorative Background Elements */}
-                        <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-                            <Sparkles className="w-32 h-32 text-codo-aqua" />
-                        </div>
                         <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-codo-green/30 blur-[100px] rounded-full pointer-events-none" />
                         <div className="absolute -top-24 -right-24 w-64 h-64 bg-codo-aqua/20 blur-[100px] rounded-full pointer-events-none" />
 
@@ -36,22 +32,20 @@ export default function CtaSection() {
                                 Partner with CODO AI Agency to build intelligent, scalable, and visually stunning software solutions that set you apart.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                                <CodoButton
-                                    size="lg"
-                                    className="gap-2 bg-codo-green text-white hover:bg-codo-green/90 shadow-lg shadow-codo-green/20"
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto mt-4">
+                                <button
                                     onClick={() => setIsModalOpen(true)}
+                                    className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-codo-green px-8 font-medium text-white shadow-xl backdrop-blur-xl border border-white/20 transition-all hover:bg-codo-green/90 hover:-translate-y-1 hover:shadow-2xl gap-3 w-full sm:w-auto"
                                 >
                                     <Phone size={18} /> Talk to an Advisor
-                                </CodoButton>
+                                </button>
 
-                                <CodoButton
-                                    size="lg"
-                                    variant="outline"
-                                    className="gap-2 text-foreground dark:text-white border-foreground/20 dark:border-white/20 hover:bg-foreground/5 dark:hover:bg-white/10"
+                                <a
+                                    href="/portfolio"
+                                    className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-transparent px-8 font-medium text-foreground dark:text-white shadow-sm backdrop-blur-xl border border-foreground/20 dark:border-white/20 transition-all hover:bg-foreground/5 dark:hover:bg-white/10 hover:-translate-y-1 gap-3 w-full sm:w-auto"
                                 >
-                                    View Portfolio <ArrowRight size={18} />
-                                </CodoButton>
+                                    View Portfolio <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
+                                </a>
                             </div>
                         </div>
                     </SpotlightCard>
