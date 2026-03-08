@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Code2, GraduationCap } from "lucide-react";
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState, useCallback, useLayoutEffect } from "react";
 
 // ── Inline useCountUp Hook ───────────────────────────────────────────
 function useCountUp(target: number, duration: number = 2000, startOnView: boolean = true) {
@@ -98,6 +98,7 @@ export default function Ecosystem() {
         offset: ["start end", "center center"]
     });
 
+
     return (
         <section ref={sectionRef} className="container max-w-7xl mx-auto px-4 md:px-8 pb-16 relative">
 
@@ -187,23 +188,32 @@ export default function Ecosystem() {
             <div className="h-px w-full bg-gradient-to-r from-transparent via-codo-green/40 to-transparent mb-12" />
 
             {/* ─── PART 4: Ecosystem Heading ─── */}
-            <div className="text-center mb-12">
+            <div className="text-center max-w-3xl mx-auto mb-16">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-3xl md:text-4xl font-bold text-codo-blue dark:text-codo-aqua"
+                    className="text-sm font-bold tracking-wider text-codo-green uppercase mb-4"
                 >
-                    Our Ecosystem
+                    CODO Ecosystem
                 </motion.h2>
-                <motion.p
-                    initial={{ opacity: 0, y: 10 }}
+                <motion.h3
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 }}
-                    className="text-foreground/70 mt-3"
+                    className="text-3xl md:text-5xl font-bold text-foreground mb-6"
                 >
-                    Two specialized verticals, one shared vision of digital excellence.
+                    Two Verticals. One Vision.
+                </motion.h3>
+                <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="text-lg text-foreground/70"
+                >
+                    We engineer elite software solutions and empower the next generation of tech leaders to drive absolute digital excellence.
                 </motion.p>
             </div>
 
@@ -218,25 +228,21 @@ export default function Ecosystem() {
                     transition={{ duration: 0.5 }}
                     className="relative group perspective-1000"
                 >
-                    {/* Atmospheric Glow */}
-                    <div className="absolute inset-x-0 -bottom-10 h-3/4 rounded-[40px] bg-codo-blue/20 dark:bg-codo-aqua/10 blur-3xl transition-all duration-500 group-hover:bg-codo-blue/40 dark:group-hover:bg-codo-aqua/20" />
-
-                    {/* Card Surface */}
-                    <div className="relative h-full overflow-hidden rounded-codo p-[1px] bg-gradient-to-b from-white/30 to-white/5 dark:from-white/20 dark:to-white/5 shadow-2xl transition-transform duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02]">
-                        <div className="absolute inset-0 bg-white/40 dark:bg-[#00152b]/60 backdrop-blur-2xl" />
+                    {/* Card Surface - High Contrast & Sharp Shadow */}
+                    <div className="relative h-full overflow-hidden rounded-codo p-[1.5px] bg-gradient-to-b from-black/5 to-transparent dark:from-white/10 dark:to-transparent shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-transform duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02]">
+                        <div className="absolute inset-0 bg-white/80 dark:bg-[#00152b]/80 backdrop-blur-sm" />
 
                         {/* Light Sweep Effect */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
                         </div>
 
                         {/* Content Container */}
                         <div className="relative h-full p-8 md:p-10 flex flex-col z-10">
                             {/* Background Watermark Icon */}
-                            <Code2 className="absolute -right-8 -bottom-8 w-64 h-64 text-codo-blue/5 dark:text-codo-aqua/5 rotate-[-15deg] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0" />
+                            <Code2 className="absolute -right-8 -bottom-8 w-64 h-64 text-codo-blue/[0.03] dark:text-codo-aqua/5 rotate-[-15deg] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0 pointer-events-none" />
 
-                            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-codo-blue/20 to-transparent dark:from-codo-aqua/20 border border-white/20 flex items-center justify-center mb-8 text-codo-blue dark:text-codo-aqua shadow-inner relative overflow-hidden">
-                                <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
+                            <div className="h-16 w-16 rounded-2xl bg-codo-blue/5 dark:bg-gradient-to-br dark:from-codo-aqua/20 dark:to-transparent border border-black/5 dark:border-white/20 flex items-center justify-center mb-8 text-codo-blue dark:text-codo-aqua shadow-sm relative overflow-hidden">
                                 <Code2 className="h-8 w-8 relative z-10" />
                             </div>
 
@@ -246,9 +252,9 @@ export default function Ecosystem() {
                                 Our service arm delivering elite custom web development, complex software architectures, mobile applications, and cutting-edge AI integrations for visionaries.
                             </p>
 
-                            <Link href="/portfolio" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-codo-blue/10 dark:bg-white/5 px-6 py-3 font-semibold text-codo-blue dark:text-whtie transition-all hover:text-white border border-codo-blue/20 dark:border-white/10 w-max">
-                                <span className="absolute inset-0 bg-codo-blue dark:bg-codo-aqua translate-y-full transition-transform duration-300 ease-out group-hover/btn:translate-y-0" />
-                                <span className="relative flex items-center dark:group-hover/btn:text-codo-blue">
+                            <Link href="/portfolio" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-codo-green px-6 py-3 font-semibold text-white transition-all shadow-md hover:shadow-codo-green/30 hover:-translate-y-0.5 w-max">
+                                <span className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-out group-hover/btn:translate-y-0" />
+                                <span className="relative flex items-center">
                                     View Digital Portfolio
                                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                                 </span>
@@ -265,25 +271,21 @@ export default function Ecosystem() {
                     transition={{ duration: 0.5, delay: 0.15 }}
                     className="relative group perspective-1000"
                 >
-                    {/* Atmospheric Glow */}
-                    <div className="absolute inset-x-0 -bottom-10 h-3/4 rounded-[40px] bg-codo-green/20 blur-3xl transition-all duration-500 group-hover:bg-codo-green/40" />
-
-                    {/* Card Surface */}
-                    <div className="relative h-full overflow-hidden rounded-codo p-[1px] bg-gradient-to-b from-white/30 to-white/5 dark:from-white/20 dark:to-white/5 shadow-2xl transition-transform duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02]">
-                        <div className="absolute inset-0 bg-white/40 dark:bg-[#00152b]/60 backdrop-blur-2xl" />
+                    {/* Card Surface - High Contrast & Sharp Shadow */}
+                    <div className="relative h-full overflow-hidden rounded-codo p-[1.5px] bg-gradient-to-b from-black/5 to-transparent dark:from-white/10 dark:to-transparent shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.2)] transition-transform duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02]">
+                        <div className="absolute inset-0 bg-white/80 dark:bg-[#00152b]/80 backdrop-blur-sm" />
 
                         {/* Light Sweep Effect */}
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-20">
+                            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/40 dark:via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite]" />
                         </div>
 
                         {/* Content Container */}
                         <div className="relative h-full p-8 md:p-10 flex flex-col z-10">
                             {/* Background Watermark Icon */}
-                            <GraduationCap className="absolute -right-8 -bottom-8 w-64 h-64 text-codo-green/5 rotate-[-15deg] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0" />
+                            <GraduationCap className="absolute -right-8 -bottom-8 w-64 h-64 text-codo-green/[0.03] rotate-[-15deg] transition-transform duration-700 group-hover:scale-110 group-hover:rotate-0 pointer-events-none" />
 
-                            <div className="h-16 w-16 rounded-2xl bg-gradient-to-br from-codo-green/20 to-transparent border border-white/20 flex items-center justify-center mb-8 text-codo-green shadow-inner relative overflow-hidden">
-                                <div className="absolute inset-0 bg-white/20 mix-blend-overlay" />
+                            <div className="h-16 w-16 rounded-2xl bg-codo-green/5 dark:bg-gradient-to-br dark:from-codo-green/20 dark:to-transparent border border-black/5 dark:border-white/20 flex items-center justify-center mb-8 text-codo-green shadow-sm relative overflow-hidden">
                                 <GraduationCap className="h-8 w-8 relative z-10" />
                             </div>
 
@@ -293,8 +295,8 @@ export default function Ecosystem() {
                                 Our education arm dedicated to catalyzing a digital revolution by training 100,000 individuals in Python Full-Stack, Machine Learning, and Robotics.
                             </p>
 
-                            <Link href="https://codoacademy.com" target="_blank" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-codo-green/10 dark:bg-white/5 px-6 py-3 font-semibold text-codo-green transition-all hover:text-white border border-codo-green/20 dark:border-white/10 w-max">
-                                <span className="absolute inset-0 bg-codo-green translate-y-full transition-transform duration-300 ease-out group-hover/btn:translate-y-0" />
+                            <Link href="https://codoacademy.com" target="_blank" className="group/btn relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-codo-green px-6 py-3 font-semibold text-white transition-all shadow-md hover:shadow-codo-green/30 hover:-translate-y-0.5 w-max">
+                                <span className="absolute inset-0 bg-white/20 translate-y-full transition-transform duration-300 ease-out group-hover/btn:translate-y-0" />
                                 <span className="relative flex items-center">
                                     Visit Academy Hub
                                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
