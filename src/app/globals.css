@@ -50,6 +50,16 @@
   @apply bg-white/40 dark:bg-[#00203F]/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
 }
 
+/* Hide scrollbar for horizontal carousels */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Animated gradient mesh background for Ecosystem narrative */
 @keyframes meshFloat {
   0% {

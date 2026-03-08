@@ -67,7 +67,48 @@ export default function Team() {
                     </motion.p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* ─── MOBILE: Horizontal Swipe Carousel ─── */}
+                <div className="md:hidden -mx-4 px-4">
+                    <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-hide" style={{ WebkitOverflowScrolling: "touch" }}>
+                        {team.map((member, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, x: 30 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.08 }}
+                                className="flex-shrink-0 w-[72vw] snap-center group"
+                            >
+                                <div className="relative overflow-hidden rounded-2xl aspect-square bg-zinc-100 dark:bg-codo-blue/20 mb-3">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                    />
+                                    {/* Social Links — always visible on mobile */}
+                                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex justify-center gap-4">
+                                        <a href={member.socials.linkedin} className="text-white/80 hover:text-white transition-colors">
+                                            <Linkedin size={18} />
+                                        </a>
+                                        <a href={member.socials.twitter} className="text-white/80 hover:text-white transition-colors">
+                                            <Twitter size={18} />
+                                        </a>
+                                        <a href={member.socials.mail} className="text-white/80 hover:text-white transition-colors">
+                                            <Mail size={18} />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="text-center">
+                                    <h4 className="text-base font-bold text-foreground mb-0.5">{member.name}</h4>
+                                    <p className="text-xs text-codo-green font-medium">{member.role}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* ─── DESKTOP: 4-Column Grid ─── */}
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {team.map((member, index) => (
                         <motion.div
                             key={index}
@@ -85,7 +126,7 @@ export default function Team() {
                                 />
 
                                 {/* Social Links Overlay */}
-                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-0 sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300 flex justify-center gap-4">
+                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex justify-center gap-4">
                                     <a href={member.socials.linkedin} className="text-white/80 hover:text-white transition-colors">
                                         <Linkedin size={20} />
                                     </a>

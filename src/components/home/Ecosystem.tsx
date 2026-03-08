@@ -79,7 +79,7 @@ export default function Ecosystem() {
     const sectionRef = useRef<HTMLElement>(null);
 
     return (
-        <section ref={sectionRef} className="container max-w-7xl mx-auto px-4 md:px-8 py-24 relative">
+        <section ref={sectionRef} className="container max-w-7xl mx-auto px-4 md:px-8 pt-8 md:pt-12 pb-24 relative">
 
 
 
@@ -89,7 +89,7 @@ export default function Ecosystem() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="py-8 md:py-12 mb-12"
+                className="pb-8 md:pb-12 mb-12"
             >
                 <div className="grid grid-cols-2 md:grid-cols-4 relative">
                     {stats.map((stat, index) => (
