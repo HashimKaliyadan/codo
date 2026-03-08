@@ -1,18 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
-    const { theme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-
-    useEffect(() => setMounted(true), []);
 
     return (
-        <footer className="bg-codo-blue pt-20 pb-10 text-white relative overflow-hidden">
+        <footer className="bg-codo-blue pt-20 pb-28 md:pb-10 text-white relative overflow-hidden">
             <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                     {/* Brand Section */}
@@ -30,16 +24,16 @@ export default function Footer() {
                             and empowering digital leaders through our Academy.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
                                 <Facebook size={18} />
                             </a>
-                            <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
+                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
                                 <Twitter size={18} />
                             </a>
-                            <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
                                 <Instagram size={18} />
                             </a>
-                            <a href="#" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="h-10 w-10 rounded-full bg-white/5 flex items-center justify-center text-codo-aqua hover:bg-codo-green hover:text-white transition-all hover:-translate-y-1">
                                 <Linkedin size={18} />
                             </a>
                         </div>
@@ -51,7 +45,7 @@ export default function Footer() {
                         <ul className="space-y-3">
                             <li><Link href="/about" className="text-codo-aqua/70 hover:text-codo-green transition-colors text-sm">About CODO</Link></li>
                             <li><Link href="/portfolio" className="text-codo-aqua/70 hover:text-codo-green transition-colors text-sm">Agency Portfolio</Link></li>
-                            <li><a href="https://codoacademy.com" target="_blank" className="text-codo-aqua/70 hover:text-codo-green transition-colors text-sm">CODO Academy</a></li>
+                            <li><a href="https://codoacademy.com" target="_blank" rel="noopener noreferrer" className="text-codo-aqua/70 hover:text-codo-green transition-colors text-sm">CODO Academy</a></li>
                             <li><Link href="/careers" className="text-codo-aqua/70 hover:text-codo-green transition-colors text-sm">Careers</Link></li>
                         </ul>
                     </div>
@@ -77,7 +71,7 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center gap-3 text-codo-aqua/70 text-sm">
                                 <Phone size={18} className="text-codo-green shrink-0" />
-                                <span>+91 88486 76627</span>
+                                <a href="tel:+918848676627" className="hover:text-white transition-colors">+91 88486 76627</a>
                             </li>
                             <li className="flex items-center gap-3 text-codo-aqua/70 text-sm">
                                 <Mail size={18} className="text-codo-green shrink-0" />

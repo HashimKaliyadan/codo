@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight, Phone } from "lucide-react";
+import Link from "next/link";
 import SalesAdvisorModal from "./SalesAdvisorModal";
 import { SpotlightCard } from "../ui/spotlight-card";
 
@@ -49,12 +50,12 @@ export default function CtaSection() {
                                     </button>
                                 </div>
 
-                                <a
+                                <Link
                                     href="/portfolio"
                                     className="group inline-flex h-12 md:h-14 items-center justify-center rounded-2xl bg-transparent px-8 font-medium text-foreground dark:text-white shadow-sm backdrop-blur-xl border border-foreground/20 dark:border-white/20 transition-all hover:bg-foreground/5 dark:hover:bg-white/10 hover:-translate-y-1 active:scale-95 gap-3 w-full sm:w-auto"
                                 >
                                     View Portfolio <ArrowRight size={18} className="transition-transform group-hover:translate-x-1" />
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </SpotlightCard>

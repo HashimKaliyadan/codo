@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { Phone } from "lucide-react";
+import { motion } from "framer-motion";
 import ThemeToggle from "./ThemeToggle";
 import SalesAdvisorModal from "./home/SalesAdvisorModal";
 
@@ -22,11 +22,9 @@ export default function Navbar() {
     const { theme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const pathname = usePathname();
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isAdvisorModalOpen, setIsAdvisorModalOpen] = useState(false);
 
     useEffect(() => setMounted(true), []);
-    useEffect(() => setIsMobileMenuOpen(false), [pathname]);
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 w-full pt-4">
@@ -98,56 +96,10 @@ export default function Navbar() {
                                 <Phone size={20} className="group-hover/phone:rotate-12 transition-transform" />
                             </button>
 
-                            {/* Mobile Menu Button - Now hidden by default, replaced by bottom nav */}
-                            <button
-                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                                className="hidden lg:hidden h-10 w-10 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-foreground/5 hover:bg-foreground/10 transition-colors"
-                                aria-label="Toggle menu"
-                            >
-                                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                            </button>
                         </div>
                     </div>
                 </div>
             </nav>
-
-            {/* ── Mobile Glass Drawer ── */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20, scale: 0.95 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                        transition={{ duration: 0.3, ease: "circOut" }}
-                        className="absolute top-[108px] left-4 right-4 sm:left-6 sm:right-6 lg:hidden z-40"
-                    >
-                        <div className="rounded-3xl bg-white/90 dark:bg-codo-blue/90 backdrop-blur-xl 
-                                        border border-border p-4 shadow-2xl">
-                            <div className="flex flex-col gap-2">
-                                {navLinks.map((link) => {
-                                    const isActive = pathname === link.href;
-                                    return (
-                                        <Link
-                                            key={link.href}
-                                            href={link.href}
-                                            className={`px-6 py-4 rounded-2xl text-[16px] font-semibold transition-all
-                                                ${isActive
-                                                    ? "bg-codo-green text-white shadow-lg"
-                                                    : "bg-foreground/5 text-foreground/80 hover:bg-foreground/10 active:scale-[0.98]"}`}
-                                        >
-                                            {link.name}
-                                        </Link>
-                                    );
-                                })}
-                                <div className="mt-2 pt-4 border-t border-border flex items-center justify-between px-6">
-                                    <span className="text-sm font-medium opacity-60">Theme</span>
-                                    <ThemeToggle />
-                                </div>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
 
             <SalesAdvisorModal
                 isOpen={isAdvisorModalOpen}

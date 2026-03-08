@@ -9,7 +9,7 @@ const team = [
         role: "Head of AI Engineering",
         bio: "Former lead researcher at top tech firms, specializing in generative AI and neural networks.",
         image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop",
-        socials: { linkedin: "#", twitter: "#", mail: "#" }
+        socials: { linkedin: "https://linkedin.com", twitter: "https://twitter.com", mail: "mailto:hello@codo.ai" }
     },
     {
         name: "David Chen",
@@ -85,7 +85,7 @@ export default function Team() {
                                 />
 
                                 {/* Social Links Overlay */}
-                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300 flex justify-center gap-4">
+                                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6 translate-y-0 sm:translate-y-full sm:group-hover:translate-y-0 transition-transform duration-300 flex justify-center gap-4">
                                     <a href={member.socials.linkedin} className="text-white/80 hover:text-white transition-colors">
                                         <Linkedin size={20} />
                                     </a>

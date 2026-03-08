@@ -61,6 +61,10 @@ export default function Hero() {
                     </motion.span>
                 </motion.h1>
 
+                <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }} className="text-base sm:text-lg md:text-xl text-foreground/60 dark:text-white/60 max-w-2xl mb-10 sm:mb-12 leading-relaxed">
+                    We engineer elite custom software, AI-powered solutions, and empower the next generation of digital leaders from Malappuram to the world.
+                </motion.p>
+
                 <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
                     {/* Primary Glass Button */}
                     <div className="w-full sm:w-auto">

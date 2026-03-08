@@ -16,8 +16,21 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "CODO AI Innovations | Mother Company of Academy & Agency",
-  description: "Empowering 100K Digital Nomads from Malappuram through AI, Robotics & Digital Mastery", // [cite: 311]
+  description: "Empowering 100K Digital Nomads from Malappuram through AI, Robotics & Digital Mastery",
   icons: { icon: "/favicon.ico" },
+  openGraph: {
+    title: "CODO AI Innovations | Custom Software & AI Solutions",
+    description: "We engineer elite custom software, AI-powered solutions, and empower the next generation of digital leaders.",
+    url: "https://codo.ai",
+    siteName: "CODO AI Innovations",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CODO AI Innovations | Custom Software & AI Solutions",
+    description: "We engineer elite custom software, AI-powered solutions, and empower the next generation of digital leaders.",
+  },
 };
 
 export default function RootLayout({

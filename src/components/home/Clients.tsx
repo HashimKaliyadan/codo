@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 import { SpotlightCard } from "../ui/spotlight-card";
 
 const clients = [
-    { name: "Acme Corp", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Oikya_Front_Logo.png" },
-    { name: "Global Tech", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Logo_TV_2015.svg" },
-    { name: "Nexus Systems", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" },
-    { name: "Zenith Solutions", logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" },
-    { name: "Apex Dynamics", logo: "https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" },
-    { name: "Quantum Innovations", logo: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Y_Combinator_logo.svg" },
+    { name: "Meridian Tech" },
+    { name: "Vantage AI" },
+    { name: "Pinnacle Systems" },
+    { name: "NovaSpark" },
+    { name: "Arclight Digital" },
+    { name: "Zenith Labs" },
 ];
 
 export default function Clients() {
@@ -38,13 +38,11 @@ export default function Clients() {
                             {duplicatedClients.map((client, index) => (
                                 <div
                                     key={index}
-                                    className="w-32 md:w-48 flex-shrink-0 flex items-center justify-center px-4 transition-all duration-300"
+                                    className="w-36 md:w-48 flex-shrink-0 flex items-center justify-center px-4 transition-all duration-300"
                                 >
-                                    <img
-                                        src={client.logo}
-                                        alt={client.name}
-                                        className="max-w-[70%] max-h-10 md:max-h-12 object-contain filter grayscale opacity-50 transition-all duration-300 hover:grayscale-0 hover:opacity-100 dark:invert"
-                                    />
+                                    <span className="text-sm md:text-base font-bold tracking-wide text-foreground/30 dark:text-white/25 whitespace-nowrap transition-all duration-300 hover:text-foreground/70 dark:hover:text-white/70 select-none">
+                                        {client.name}
+                                    </span>
                                 </div>
                             ))}
                         </div>
